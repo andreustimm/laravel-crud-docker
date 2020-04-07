@@ -1998,9 +1998,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     addComment: function addComment(comment) {
       this.comments.push(comment);
     },
-    removeComment: function removeComment(index) {
-      console.log('Index:', index);
-      this.comments.splice(index, 1);
+    removeComment: function removeComment(comment) {
+      this.comments.splice(comment.index, 1);
     }
   },
   computed: {
@@ -2043,10 +2042,9 @@ __webpack_require__.r(__webpack_exports__);
     allComments: Array
   },
   methods: {
-    removeComment: function removeComment(myIndex) {
-      console.log('Index', myIndex);
+    removeComment: function removeComment(index) {
       this.$emit('remove-comment', {
-        index: myIndex
+        index: index
       });
     }
   }

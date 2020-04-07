@@ -32,9 +32,8 @@
             addComment(comment) {
                 this.comments.push(comment);
             },
-            removeComment(index) {
-                console.log('Index:', index);
-                this.comments.splice(index, 1);
+            removeComment(comment) {
+                this.comments.splice(comment.index, 1);
             }
         },
         computed: {

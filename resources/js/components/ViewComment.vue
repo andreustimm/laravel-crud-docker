@@ -17,11 +17,9 @@
             allComments: Array
         },
         methods: {
-            removeComment(myIndex) {
-                console.log('Index', myIndex);
-
+            removeComment(index) {
                 this.$emit('remove-comment', {
-                    index: myIndex
+                    index: index
                 });
             }
         }

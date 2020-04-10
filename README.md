@@ -2,22 +2,99 @@
 
 ## Laravel CRUD Docker
 
-Come soon...
+- Laravel 7.0
+- Vue.js
+- Database (Sqlite, MariaDB, Mongo, etc...)
+- Docker
 
-## Roadmap
+<br>
 
-- Release Version 0.1 - Install Laravel and start project (07/04/2020)
-- Release Version 0.2 - CRUD Frontend Vue (08/04/2020)
-- Release Version 0.3 - API CRUD (09/04/2020)
-- Release Version 0.4 - Docker's Implanting (10/04/2020)
-- Release Version 0.5 - Tests and Deploy (11/04/2020)
+### Install
 
-## About the Author
+```
+git clone https://github.com/andreustimm/laravel-crud-docker.git
+cd laradock
+git submodule update
+cp env-example .env
+```
 
-I have been working with technologies for 18 years and as a Developer for 15 years. I have a large experience in developing web and mobile, database, front-end, analysis, systems development, and agile project management with metrics and continuous integration. Leader, proactive and communicative.
+<br>
 
-- [Andreus Timm](https://www.zorbit.com.br/portfolio)
+### Laradock's Configuration
 
-## License
+To edit `.env` with your preference
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+**Example:**
+
+```
+APP_CODE_PATH_HOST=../web/
+PHP_VERSION=7.3
+```
+
+**MariaDB**
+
+```
+MARIADB_VERSION=latest
+MARIADB_DATABASE=laravel
+MARIADB_USER=root
+MARIADB_PASSWORD=root
+MARIADB_PORT=3306
+MARIADB_ROOT_PASSWORD=root
+```
+
+**Nginx**
+
+```
+NGINX_HOST_HTTP_PORT=9090
+NGINX_HOST_HTTPS_PORT=443
+...
+NGINX_PHP_UPSTREAM_PORT=9000
+NGINX_SSL_PATH=./nginx/ssl/
+```
+
+### Project's Configuration
+```
+cd web
+composer install
+npm run prod
+php artisan migrate
+php artisan passport:install
+```
+
+<br>
+
+### Run Project
+
+To run the `docker-compose up -d` with your favorite stack.
+
+**Example:** For run `nginx`, `apache`, `mariadb`, `mongo`, `redis`
+
+- [Documentation](https://laradock.io/)
+- [Github Laradock](https://github.com/laradock/laradock)
+
+```
+cd laradock
+sudo docker-compose up -d nginx
+```
+
+<br>
+
+### Roadmap
+
+- Release Version 0.1 - Install Laravel and start project
+- Release Version 0.2 - CRUD Frontend Vue
+- Release Version 0.3 - Docker's Implanting
+- Release Version 0.4 - Documentation
+- Release Version 0.5 - API CRUD *(11/04/2020)*
+- Release Version 0.6 - Tests and Deploy *(12/04/2020)*
+
+<br>
+
+### Author
+
+- [Portfolio](https://www.zorbit.com.br/portfolio)
+- [Linkedin](https://www.linkedin.com/in/andreus-timm-2490b134/)
+
+### License
+
+[MIT license](https://opensource.org/licenses/MIT).

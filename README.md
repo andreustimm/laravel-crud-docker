@@ -85,8 +85,9 @@ sudo docker-compose up -d nginx
 - Release Version 0.2 - CRUD Frontend Vue
 - Release Version 0.3 - Docker's Implanting
 - Release Version 0.4 - Documentation
-- Release Version 0.5 - API CRUD *(11/04/2020)*
-- Release Version 0.6 - Tests and Deploy *(12/04/2020)*
+- Release Version 0.5 - API CRUD
+- Release Version 0.7 - Auth API *come soon*
+- Release Version 0.8 - TDD *come soon*
 
 <br>
 

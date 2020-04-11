@@ -86,8 +86,8 @@ sudo docker-compose up -d nginx
 - Release Version 0.3 - Docker's Implanting
 - Release Version 0.4 - Documentation
 - Release Version 0.5 - API CRUD
-- Release Version 0.7 - Auth API *come soon*
-- Release Version 0.8 - TDD *come soon*
+- Release Version 0.6 - Auth API *come soon*
+- Release Version 0.7 - TDD *come soon*
 
 <br>
 

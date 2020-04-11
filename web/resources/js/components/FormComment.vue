@@ -18,13 +18,14 @@
     export default {
         data() {
             return {
+                id: '',
                 name: '',
                 message: ''
             }
         },
         methods: {
             addComment() {
-                if (this.message.trim() === '') {
+                if (this.name.trim() === '' || this.message.trim() === '') {
                     return;
                 }
 

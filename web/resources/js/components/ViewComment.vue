@@ -5,7 +5,7 @@
             <span>Autor: <strong>{{ comment.name }}</strong></span>
             <p>{{ comment.message }}</p>
             <div>
-                <a href="#" title="Excluir" v-on:click.prevent="removeComment(index)">Excluir</a>
+                <a href="#" title="Excluir" v-on:click.prevent="removeComment(comment.id)">Excluir</a>
             </div>
         </div>
     </div>
@@ -17,9 +17,9 @@
             allComments: Array
         },
         methods: {
-            removeComment(index) {
+            removeComment(id) {
                 this.$emit('remove-comment', {
-                    index: index
+                    id: id
                 });
             }
         }

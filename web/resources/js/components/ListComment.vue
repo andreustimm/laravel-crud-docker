@@ -29,12 +29,24 @@
             }
         },
         methods: {
-            addComment(comment) {
-                this.comments.push(comment);
+            async addComment(comment) {
+                const { data } = await window.axios.post('/api/comment', comment);
+                this.comments.push(data);
             },
-            removeComment(comment) {
-                this.comments.splice(comment.index, 1);
+            async removeComment(comment) {
+                if (confirm("Você deseja excluir o registro?")) {
+                    await window.axios.delete('/api/comment/' + comment.id);
+                    let index = this.comments.findIndex(crud => crud.id === comment.id);
+                    this.comments.splice(index, 1);
+                }
+            },
+            async read() {
+                const { data } = await window.axios.get('/api/comment');
+                data.forEach(comment => this.comments.push(comment));
             }
+        },
+        created() {
+            this.read();
         },
         computed: {
             allComments() {
